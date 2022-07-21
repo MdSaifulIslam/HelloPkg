@@ -1,4 +1,4 @@
-package org.learning.spring.test.testproject;
+package org.learning.spring.test.SpringLearn;
 
 public class Patient {
 

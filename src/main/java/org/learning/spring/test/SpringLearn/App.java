@@ -1,4 +1,4 @@
-package org.learning.spring.test.testproject;
+package org.learning.spring.test.SpringLearn;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -12,7 +12,7 @@ public class App
     public static void main( String[] args )
     {
     	
-    	ApplicationContext context = new ClassPathXmlApplicationContext("org/learning/spring/test/testproject/beans/beans.xml");
+    	ApplicationContext context = new ClassPathXmlApplicationContext("org/learning/spring/test/SpringLearn/beans/beans.xml");
     	
         Patient patient = (Patient) context.getBean("patient");
         System.out.println(patient);

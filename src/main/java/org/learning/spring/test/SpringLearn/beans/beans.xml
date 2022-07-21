@@ -8,10 +8,8 @@
 
 
 	<bean id="patient"
-		class="org.learning.spring.test.testproject.Patient" scope="singleton"
-		init-method="onCreate" destroy-method="onDestroy"
-		c:_0="44"
-		c:_1="saiful"
-		>
+		class="org.learning.spring.test.SpringLearn.Patient" scope="singleton"
+		init-method="onCreate" destroy-method="onDestroy" c:_0="44"
+		c:_1="saiful">
 	</bean>
 </beans>

@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.learning.spring.test</groupId>
-  <artifactId>testproject</artifactId>
+  <artifactId>SpringLearn</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
   <name>testproject</name>
