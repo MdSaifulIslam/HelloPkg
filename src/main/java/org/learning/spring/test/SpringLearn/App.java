@@ -1,5 +1,7 @@
 package org.learning.spring.test.SpringLearn;
 
+import java.util.Iterator;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -15,11 +17,10 @@ public class App
     	ApplicationContext context = new ClassPathXmlApplicationContext("org/learning/spring/test/SpringLearn/beans/beans.xml");
     	
         Patient patient = (Patient) context.getBean("patient");
-        System.out.println(patient);
-        
-        for(String name:patient.getEnergencyContactList()) {
-        	System.out.println(name);
-        }
+
+        for (EmergencyContact contacts : patient.getEmergencyContacts()) {
+			System.out.println(contacts.getPhoneNumber());
+		}
         
         ((ClassPathXmlApplicationContext) context).close();
         

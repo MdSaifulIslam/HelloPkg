@@ -9,17 +9,36 @@
 
 	<bean id="patient"
 		class="org.learning.spring.test.SpringLearn.Patient" scope="singleton"
-		init-method="onCreate" destroy-method="onDestroy" c:_0="44"
-		c:_1="saiful">
-	<property name="energencyContactList">
+		c:_0="44" c:_1="saiful">
+	<property name="emergencyContacts">
 		<list>
-			<value>Name1</value>
-			<value>2</value>
-			<value>3</value>
-			<value>5</value>
-			<value>44</value>
-			<value>two</value>
+			<ref bean="contact1" />
+			<ref bean="contact2" />
+			<ref bean="contact3" />
+			<ref bean="contact4" />
 		</list>
 	</property>
+	</bean>
+
+
+	<bean id="contact1"
+		class="org.learning.spring.test.SpringLearn.EmergencyContact">
+		<property name="name" value="Saiful"></property>
+		<property name="phoneNumber" value="54646546"></property>
+	</bean>
+	<bean id="contact2"
+		class="org.learning.spring.test.SpringLearn.EmergencyContact">
+		<property name="name" value="Sakib"></property>
+		<property name="phoneNumber" value="0177324654641151"></property>
+	</bean>
+	<bean id="contact3"
+		class="org.learning.spring.test.SpringLearn.EmergencyContact">
+		<property name="name" value="Asif"></property>
+		<property name="phoneNumber" value="6546456"></property>
+	</bean>
+	<bean id="contact4"
+		class="org.learning.spring.test.SpringLearn.EmergencyContact">
+		<property name="name" value="Jamal"></property>
+		<property name="phoneNumber" value="017736546241151"></property>
 	</bean>
 </beans>

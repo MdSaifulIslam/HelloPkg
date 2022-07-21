@@ -7,15 +7,7 @@ public class Patient {
 	private int id;
 	private String name;
 	
-	private List<String> energencyContactList;
-
-	public void onCreate() {
-		System.out.println("Created " + this);
-	}
-	
-	public void onDestroy() {
-		System.out.println("Destroyed " + this);
-	}
+	List<EmergencyContact> emergencyContacts;
 
 	public Patient() {
 	}
@@ -40,23 +32,27 @@ public class Patient {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public List<String> getEnergencyContactList() {
-		return energencyContactList;
+
+	/**
+	 * @return the emergencyContacts
+	 */
+	public List<EmergencyContact> getEmergencyContacts() {
+		return emergencyContacts;
 	}
 
-	public void setEnergencyContactList(List<String> energencyContactList) {
-		this.energencyContactList = energencyContactList;
-	}
-	
-	
-	
-	@Override
-	public String toString() {
-		return "Patient [id=" + id + ", name=" + name + ", energencyContactList=" + energencyContactList + "]";
+	/**
+	 * @param emergencyContacts the emergencyContacts to set
+	 */
+	public void setEmergencyContacts(List<EmergencyContact> emergencyContacts) {
+		this.emergencyContacts = emergencyContacts;
 	}
 
 	public void speak() {
 		System.out.println("Hello, UM sick");
+	}
+
+	@Override
+	public String toString() {
+		return "Patient [id=" + id + ", name=" + name + ", emergencyContacts=" + emergencyContacts + "]";
 	}
 }
