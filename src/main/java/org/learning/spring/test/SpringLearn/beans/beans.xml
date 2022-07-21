@@ -11,5 +11,15 @@
 		class="org.learning.spring.test.SpringLearn.Patient" scope="singleton"
 		init-method="onCreate" destroy-method="onDestroy" c:_0="44"
 		c:_1="saiful">
+	<property name="energencyContactList">
+		<list>
+			<value>Name1</value>
+			<value>2</value>
+			<value>3</value>
+			<value>5</value>
+			<value>44</value>
+			<value>two</value>
+		</list>
+	</property>
 	</bean>
 </beans>

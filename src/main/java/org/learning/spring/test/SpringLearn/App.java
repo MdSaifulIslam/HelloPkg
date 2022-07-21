@@ -17,6 +17,10 @@ public class App
         Patient patient = (Patient) context.getBean("patient");
         System.out.println(patient);
         
+        for(String name:patient.getEnergencyContactList()) {
+        	System.out.println(name);
+        }
+        
         ((ClassPathXmlApplicationContext) context).close();
         
     }
