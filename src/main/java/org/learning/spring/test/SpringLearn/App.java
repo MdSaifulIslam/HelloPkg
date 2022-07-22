@@ -16,12 +16,10 @@ public class App
     	
     	ApplicationContext context = new ClassPathXmlApplicationContext("org/learning/spring/test/SpringLearn/beans/beans.xml");
     	
-        Patient patient = (Patient) context.getBean("patient");
-
-        for (EmergencyContact contacts : patient.getEmergencyContacts()) {
-			System.out.println(contacts.getPhoneNumber());
-		}
+        ContactBook contacts = (ContactBook) context.getBean("contactbook");
         
+        System.out.println(contacts);
+
         ((ClassPathXmlApplicationContext) context).close();
         
     }

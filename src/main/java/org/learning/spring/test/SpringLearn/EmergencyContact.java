@@ -31,6 +31,4 @@ public class EmergencyContact {
 	public String toString() {
 		return "EmergencyContact [name=" + name + ", phoneNumber=" + phoneNumber + "]";
 	}
-	
-	
 }
