@@ -1,7 +1,5 @@
 package org.learning.spring.test.SpringLearn;
 
-import java.util.Iterator;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -16,9 +14,10 @@ public class App
     	
     	ApplicationContext context = new ClassPathXmlApplicationContext("org/learning/spring/test/SpringLearn/beans/beans.xml");
     	
-        ContactBook contacts = (ContactBook) context.getBean("contactbook");
+        Logger logger = (Logger) context.getBean("logger");
         
-        System.out.println(contacts);
+        logger.writeConsole("console write");
+        logger.writeFile("File write");
 
         ((ClassPathXmlApplicationContext) context).close();
         
