@@ -1,43 +1,38 @@
 package org.learning.spring.test.SpringLearn;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.inject.Inject;
+import javax.inject.Named;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Logger {
 
-//    @Autowired
 	private ConsoleWriter consoleWriter;
-//    @Autowired
-	private FileWriter fileWriter;
-	
-	public Logger() {
-		
-	}
-
-	@Autowired(required = false)
-	public Logger(ConsoleWriter consoleWriter) {
-		this.consoleWriter = consoleWriter;
-		this.fileWriter = fileWriter;
-	}
+	private LogWriter fileWriter;
 
 	public ConsoleWriter getConsoleWriter() {
 		return consoleWriter;
 	}
 
+	@Inject
 	public void setConsoleWriter(ConsoleWriter consoleWriter) {
 		this.consoleWriter = consoleWriter;
 	}
 
-	public FileWriter getFileWriter() {
+	public LogWriter getFileWriter() {
 		return fileWriter;
 	}
 
-	@Autowired
-	public void setFileWriter(FileWriter fileWriter) {
+	@Inject
+	@Named(value = "fileWriter")
+	public void setFileWriter(LogWriter fileWriter) {
 		this.fileWriter = fileWriter;
 	}
 
 	public void writeConsole(String text) {
-		if (consoleWriter != null)
 			consoleWriter.write(text);
 	}
 

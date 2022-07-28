@@ -1,5 +1,8 @@
 package org.learning.spring.test.SpringLearn;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ConsoleWriter implements LogWriter {
 
 	@Override
