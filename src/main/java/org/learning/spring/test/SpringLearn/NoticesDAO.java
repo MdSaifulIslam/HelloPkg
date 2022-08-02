@@ -41,26 +41,34 @@ public class NoticesDAO {
 		});
 	}
 
-	public Notic getNotice(int id) {
+	public boolean deleteNotic(int id) {
 
 		MapSqlParameterSource sqlParamenter = new MapSqlParameterSource();
 
 		sqlParamenter.addValue("id", id);
 
+		return jdbc.update("delete from notices where id= :id", sqlParamenter) == 1;
+	}
+	public Notic getNotice(int id) {
+		
+		MapSqlParameterSource sqlParamenter = new MapSqlParameterSource();
+		
+		sqlParamenter.addValue("id", id);
+		
 		return jdbc.queryForObject("select * from notices where id= :id", sqlParamenter, new RowMapper<Notic>() {
-
+			
 			@Override
 			public Notic mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Notic notic = new Notic();
-
+				
 				notic.setId(rs.getInt("id"));
 				notic.setName(rs.getString("name"));
 				notic.setEmail(rs.getString("email"));
 				notic.setText(rs.getString("text"));
-
+				
 				return notic;
 			}
-
+			
 		});
 	}
 

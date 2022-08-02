@@ -15,6 +15,9 @@ public class App {
 		NoticesDAO noticesDao = (NoticesDAO) context.getBean("noticesDao");
 
 		try {
+			
+			noticesDao.deleteNotic(2);
+			
 			List<Notic> notices = noticesDao.getNotices();
 
 			for (Notic notic : notices) {
